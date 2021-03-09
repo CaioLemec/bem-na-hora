@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Programa-se em tempo real.</title>
+  <link rel="icon" href="/images/logo-icon.ico" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/animations.css" />
+  <link rel="stylesheet" href="/css/map-page.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="http://api.olhovivo.sptrans.com.br/v2.1/Login/Autenticar?token=35779ce7c804e10322855a99110a9c1bf818aac328c3d591edb969f7972c4460";>
+  
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+  crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+  integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+  crossorigin=""></script>
+</head>
+
+<body>
+  <div id="page-map">
+    <aside class="animate-right">
+      <header>
+        <img src="/images/logo.svg" alt="Logotype" />
+
+        <h2>Aiko</h2>
+
+        <p>Ajuste o filtro para obter melhores resultados.</p>
+      </header>
+
+      <footer>
+        <a href="/index.html" title="Visualizar mapa" class="animate-up">
+          <img src="/images/arrow-back.svg" alt="Ir para o mapa" />
+          <strong>Voltar</strong>
+        </a>
+      </footer>
+    </aside>
+
+    <div id="mapid" class="animate-appear"></div>
+
+    <script src="/scripts/map.js"></script>
+
+  </div>
+</body>
+
+</html>
