@@ -10,8 +10,6 @@
   <link rel="stylesheet" href="/css/animations.css" />
   <link rel="stylesheet" href="/css/map-page.css" />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="http://api.olhovivo.sptrans.com.br/v2.1/Login/Autenticar?token=35779ce7c804e10322855a99110a9c1bf818aac328c3d591edb969f7972c4460";>
-  
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
   crossorigin=""/>
@@ -29,6 +27,21 @@
         <h2>Aiko</h2>
 
         <p>Ajuste o filtro para obter melhores resultados.</p>
+
+        <button onClick="auth()">AAAA</button>
+
+        <div class="input-block">
+          <input placeholder="Ex: Ramos" id="lines" name="lines" type="string" required />
+          <button onClick="getLines()">Buscar linhas</button>
+        </div>
+
+        <!-- <div class="input-block">
+          <input placeholder="Buscar paradas" id="stops" name="stops" type="text" required />
+          <button onClick="getStops()">Buscar paradas</button>
+        </div> -->
+
+
+
       </header>
 
       <footer>
