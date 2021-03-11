@@ -1,6 +1,6 @@
-const map = L.map("mapid").setView([-23.5879824,-46.6616683], 14);
+const mymap = L.map("mapid").setView([-23.5879824,-46.6616683], 14);
 
-L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(map);
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(mymap);
 
 // const fetch = require('node-fetch')
 
@@ -19,20 +19,37 @@ async function auth() {
   console.log(response)
 }
 
-//Buscando uma linha específica
+//Buscando uma linhas a partir de um input
 async function getLines() {
   const inputClient = document.querySelector("#lines").value;
-  console.log(inputClient)
   const lines = await (await fetch(`${base_url}/Linha/Buscar?termosBusca=${inputClient}`, { method: 'GET', headers })).json()
-  
+  lines.forEach(linhas => {
+    if (linhas.sl == 1) {
+        console.log(`Código da linha = ${linhas.cl}, Sentido ${linhas.tp}`)
+    } else {
+        console.log(`Código da linha = ${linhas.cl}, Sentido ${linhas.ts}`)
+    }
+  });
 }
 
-//Buscando uma parada específica
+//Buscando uma parada a partir de um input
 async function getStops() {
   const inputClient = document.querySelector("#stops").value;
-  console.log(inputClient)
   const stops = await (await fetch(`${base_url}/Parada/Buscar?termosBusca=${inputClient}`, { method: 'GET', headers })).json()
-  console.log(stops)
+  stops.forEach(stops => {
+
+  var marker = L.marker([stops.py, stops.px]).addTo(mymap);
+  marker.bindPopup(`<strong>PARADA:</strong> ${stops.np}<br><strong>ENDEREÇO:</strong> ${stops.ed}`).openPopup();
+  });
+}
+
+// Posições dos veículos: Exibir no mapa onde os veículos estavam na sua última atualização.
+async function getVehicles() {
+  const vehicles = await (await fetch(`${base_url}/Posicao`, { method: 'GET', headers })).json()
+  Object.keys(vehicles).forEach((key) => {
+    console.log(vehicles[key]); 
+    // percorrer o array e coletar cada px,py para imprimir no mapa.
+  });
 }
 
 
@@ -41,13 +58,7 @@ async function getStops() {
 
 // Desafio: https://github.com/aikodigital/programa-estagio-2021/blob/main/front-end.md
 
-// Requesitos: 
-
-// Posições dos veículos: Exibir no mapa onde os veículos estavam na sua última atualização.
-
-// Linhas: Exibir informações sobre as linhas de ônibus.
-
-// Paradas: Exibir os pontos de parada da cidade no mapa.
+// Requesitos: (FALTA)
 
 // Previsão de chegada: Dado uma parada informar a previsão de chegada de cada veículo que passe pela parada selecionada.
 
