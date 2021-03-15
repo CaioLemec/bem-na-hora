@@ -23,33 +23,30 @@
     <aside class="animate-right">
       <header>
         <img src="/images/logo.svg" alt="Logotype" />
-
         <h2>Aiko</h2>
+        <div class="container" >
+            <div class="input-block">
+              <input placeholder=" Ex: Ramos" id="lines" name="lines" type="string" required />
+              <button onClick="getLines()">Buscar linhas</button>
+            </div>
+            <div class="input-block">
+              <input placeholder=" Ex: Afonso Braz" id="stops" name="stops" type="text" required />
+              <button onClick="getStops()">Buscar paradas</button>
+            </div>
+            <div class="input-block">
+              <input placeholder=" Cód: Parada" id="arrivals-stop" name="arrivals-stop" type="text" required />
+              <input placeholder=" Cód: Linha" id="arrivals-line" name="arrivals-line" type="text" required />
+              <button onClick="arrivalForecast()">Tempo Chegada</button>
 
-        <p>Ajuste o filtro para obter melhores resultados.</p>
-
-        <button onClick="auth()">Autenticar</button>
-
-        <div class="input-block">
-          <input placeholder="Ex: Ramos" id="lines" name="lines" type="string" required />
-          <button onClick="getLines()">Buscar linhas</button>
+            <div class="input-block">
+            <button class ="last" onClick="getVehicles()">Buscar Veículos</button>
+            </div>
         </div>
-
-        <div class="input-block">
-          <input placeholder="Buscar paradas" id="stops" name="stops" type="text" required />
-          <button onClick="getStops()">Buscar paradas</button>
-        </div>
-
-        <button onClick="getVehicles()">Buscar Veículos</button>
-
-
-
       </header>
-
       <footer>
-        <a href="/index.html" title="Visualizar mapa" class="animate-up">
-          <img src="/images/arrow-back.svg" alt="Ir para o mapa" />
-          <strong>Voltar</strong>
+        <a href="/index.html" title="voltar para o início" class="animate-up">
+          <img src="/images/arrow-back.svg" alt="Ir para o início" />
+        </a>
         </a>
       </footer>
     </aside>

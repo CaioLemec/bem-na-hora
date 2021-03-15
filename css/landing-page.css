@@ -32,10 +32,6 @@ main h1 {
   margin-bottom: 1rem;
 }
 
-.visit a:hover {
-  background: #be961e;
-}
-
 .visit a:active {
   transform: scale(0.95);
 }
@@ -49,17 +45,18 @@ main h1 {
   width: 8rem;
   height: 8rem;
   background: #809aeb;
-
   border: 0;
   border-radius: 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
-
   margin: auto;
-
   transition: background 200ms;
   animation-delay: 250ms;
+}
+
+.visit a:hover {
+  background: #be961e;
 }
 
 /* Responsividade Desktop */
@@ -69,13 +66,15 @@ main h1 {
     padding-top: 10rem;
   }
 
-  #logo, h1, .visit p {
+  #logo,
+  h1,
+  .visit p {
     margin-bottom: 0;
   }
 
   #container {
     background: url("../images/bg.svg") no-repeat 70% /
-    clamp(30rem, 54vw, 56rem);
+      clamp(30rem, 54vw, 56rem);
     padding: 5rem 2rem;
   }
 
