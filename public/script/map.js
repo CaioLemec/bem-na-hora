@@ -21,30 +21,13 @@ async function auth() {
       headers,
     })
   ).json();
-  console.log(response);
+  response ? console.log("Autenticação concluida com êxito.") : console.log("Erro na autenticação.");
 }
 
 //Autenticando onload.
 window.onload = auth();
 
 
-//Buscando uma linha a partir de um input
-async function getLines() {
-  const inputClient = document.querySelector("#lines").value;
-  const lines = await (
-    await fetch(`${base_url}/Linha/Buscar?termosBusca=${inputClient}`, {
-      method: "GET",
-      headers,
-    })
-  ).json();
-  lines.forEach((lines) => {
-    if (lines.sl === 1) {
-      console.log(`Código da linha = ${lines.cl}, Sentido ${lines.tp}`);
-    } else {
-      console.log(`Código da linha = ${lines.cl}, Sentido ${lines.ts}`);
-    }
-  });
-}
 
 //Buscando uma parada a partir de um input
 async function getStops() {
@@ -55,18 +38,27 @@ async function getStops() {
       headers,
     })
   ).json();
-  stops.forEach((stops) => {
-    var marker = L.marker([stops.py, stops.px]).addTo(mymap);
-    marker
-      .bindPopup(
-        `
-          <strong>CÓDIGO: </strong>${stops.cp} <br>
-          <strong>NOME: </strong>${stops.np} <br>
-          <strong>ENDEREÇO: </strong>${stops.ed}
-        `
-      )
-      .openPopup();
-  });
+    if (stops.length <= 0) {
+      alert(`
+      Não encontramos nada pesquisando ${inputClient}.
+      A consulta possibilida encontrar pontos de parada
+      de ônibus na cidade de São Paulo.
+      Exemplo: Afonso ou Balthazar da Veiga.
+      `)
+    } else {
+      stops.forEach((stops) => {
+        var marker = L.marker([stops.py, stops.px]).addTo(mymap);
+        marker
+          .bindPopup(
+            `
+              <strong>CÓDIGO: </strong>${stops.cp} <br>
+              <strong>NOME: </strong>${stops.np} <br>
+              <strong>ENDEREÇO: </strong>${stops.ed}
+            `
+          )
+          .openPopup();
+      }); 
+    }
 }
 
 // Posições dos veículos: Exibir no mapa onde os veículos estavam na sua última atualização.
@@ -90,8 +82,8 @@ async function getVehicles() {
   });
 }
 
-// Previsão de chegada: Dado uma parada informar a previsão de chegada de cada veículo que passe pela parada selecionada.
-
+//Dado uma parada informar a previsão de chegada de cada veículo que passe pela parada selecionada.
+//Tentei fazer mas tudo retorna null. Liguei para a sec mun de mobilidade e transporte sem sucesso.
 async function arrivalForecast() {
   const arrivalsStop = document.querySelector("#arrivals-stop").value;
   const arrivalsLine = document.querySelector("#arrivals-line").value;
@@ -103,11 +95,8 @@ async function arrivalForecast() {
   ).json();
   const getLineInfo = response.l;
   const getStopInfo = response.p;
-  console.log(getLineInfo, getStopInfo, response)
+  console.log(getLineInfo)
 }
-
-
-
 
 
 // Documentação API: https://www.sptrans.com.br/desenvolvedores/api-do-olho-vivo-guia-de-referencia/documentacao-api/
