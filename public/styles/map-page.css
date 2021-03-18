@@ -16,14 +16,14 @@ aside {
 }
 
 aside h2 {
-  margin-top: 6.4rem;
+  text-align: center;
+  margin-top: 6rem;
   font: 800 clamp(2rem, 5vw, 3.6rem) / 1.1 "Nunito", sans-serif;
   margin-bottom: 2rem;
 }
 
 aside footer a {
   text-decoration: none;
-  font: 100 clamp(2rem, 5vw, 1.6rem) / 1.1 "Nunito", sans-serif;
   width: 4rem;
   height: 4rem;
   background: #809aeb;
@@ -35,7 +35,7 @@ aside footer a {
   margin: auto;
   transition: background 200ms;
   animation-delay: 250ms;
-  margin-top: 2rem;
+  margin-top: 6rem;
 }
 
 aside footer a:hover {
@@ -88,3 +88,29 @@ aside .container {
   width: 100%;
   height: 100vh;
 }
+
+.load-gif {
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0; 
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.load-gif img {
+  margin: 0 auto;
+  max-width: 20vw;
+  max-height: 20vh;
+  transform: translateX(+100%);
+}
+
+.load-gif.active {
+  visibility: visible;
+  opacity: 1;
+}
+

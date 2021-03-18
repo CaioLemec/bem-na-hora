@@ -8,6 +8,7 @@
   <link rel="icon" href="/assets/logo-icon.ico" />
   <link rel="stylesheet" href="styles/animations.css" />
   <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/modal.css" />
   <link rel="stylesheet" href="styles/map-page.css" />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
@@ -23,8 +24,7 @@
     <aside class="animate-right">
       <header>
         <img src="assets/logo.svg" alt="Logotype" />
-        <h2>Aiko</h2>
-
+        <h2>BemNaHora</h2>
         <div class="container" >
             <div class="input-block">
               <input placeholder=" Ex: Ramos" id="lines" name="lines" type="string" required />
@@ -54,15 +54,26 @@
       </footer>
     </aside>
 
-    {% for item in items %}
-      <li>{{item.sl}}</li>
-    {% endfor %}
+    <div id="mapid" class="hidden-map"></div>
 
-    <div id="mapid" class="animate-appear"></div>
+    <div class="modal-container">
+      <div class="modal">
+            <a onClick="closeModal()" class="close-modal"><img src="/assets/x.svg" alt="Ir para o mapa" /></a>
+      <h1>Resultado de sua busca:</h1>
+            <ul> {# aqui vem as <li> #}
+            </ul>
+      </div>
+    </div>
+
+    <div class="load-gif">
+    <img src="/assets/loading.gif">
+    </div>
 
     <script src="/script/map.js"></script>
     <script src="/script/lines.js"></script>
-
+    <script src="/script/stops.js"></script>
+    <script src="/script/vehicles.js"></script>
+    <script src="/script/arrivals.js"></script>
   </div>
 </body>
 

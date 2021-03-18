@@ -2,7 +2,6 @@ const express = require("express");
 const nunjucks = require("nunjucks");
 
 const server = express();
-
 const infos = require("./public/script/lines")
 
 server.use(express.static("public"))
@@ -26,3 +25,4 @@ server.get("/map", function (req, res) {
 server.listen(5000, function () {
   console.log("Server is Running.");
 });
+
