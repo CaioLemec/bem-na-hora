@@ -106,7 +106,7 @@ Projeto licenciado por MIT [LICENSE](./LICENSE).
 <br>
 <img style="border-radius: 30%;" src="https://avatars3.githubusercontent.com/u/59886891?s=460&v=4" width="75px;"/>
 <sub>&nbsp;&nbsp;&nbsp;Caio Lemec</sub>
-
+<br>
 [![Badge](https://img.shields.io/static/v1?label=&message=caiolemec@gmail.com&color=9cf&style=flat-square&logo=Microsoft-Outlook&logoColor=white&link=mailto:caiolemec@gmail.com)](caiolemec@gmail.com) [![Badge](https://img.shields.io/static/v1?label=&message=CaioLemec&color=9cf&style=flat-square&logo=Linkedin&logoColor=white&link=https://br.linkedin.com/in/caio-lemec)](https://br.linkedin.com/in/caio-lemec/)
 
 <hr>
