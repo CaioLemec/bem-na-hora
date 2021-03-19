@@ -17,7 +17,7 @@
 <br>
 
 <p align="center">
-  <img  src="https://img.shields.io/static/v1?label=licença&message=MIT&color=9cf&labelColor=white" alt="License">
+  <img  src="https://img.shields.io/static/v1?label=license&message=MIT&color=9cf&labelColor=white" alt="License">
 </p>
 <br>
 
