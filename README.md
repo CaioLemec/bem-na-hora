@@ -33,7 +33,7 @@ pessoas a obterem melhores informações sobre o transporte publico na cidade de
 Através da [API Olho Vivo](http://olhovivo.sptrans.com.br/) podemos coletar informações sobre
 linhas de ônibus, paradas de ônibus e onde encontram-se veículos em suas ultimas atualizações. 📌
 
-<strong>Bem na hora</strong> foi criado no programa de estágio 2021 da empresa [AIKO](https://aiko.digital/)
+<strong>Bem na hora</strong> foi criado através de um teste técnico para o programa de estágio 2021 da empresa [AIKO](https://aiko.digital/)
 na modalidade front-end. 📘
 
 Algumas funcionalidades ainda estão sendo desenvolvidas, sinta-se avontade em contribuir.
